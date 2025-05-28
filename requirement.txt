@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+aiosmtpd
+redis
+email-validator
+python-multipart

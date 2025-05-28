@@ -1,0 +1,49 @@
+.home-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.email-address-section {
+  margin-bottom: var(--space-5);
+}
+
+.email-address-section h1 {
+  color: var(--color-gray-800);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-3);
+}
+
+.instructions {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  text-align: center;
+}
+
+.inbox-section h2 {
+  color: var(--color-gray-800);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.error-message {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  color: var(--color-error);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+}
+
+@media (max-width: 768px) {
+  .email-address-section h1 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  
+  .inbox-section h2 {
+    font-size: 1.125rem;
+  }
+}
