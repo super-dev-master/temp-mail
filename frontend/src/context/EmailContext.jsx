@@ -25,14 +25,8 @@ const EmailProvider = ({ children }) => {
 
   const refreshInbox = async () => {
     setIsLoading(true)
-    let messages;
+    const messages = await getEmailById(currentEmail);
 
-    try{
-      messages = await getEmailById(currentEmail);
-    }
-    catch(e){
-      console.log(e.status);
-    }
     setEmails(messages);
 
     setIsLoading(false)
@@ -51,7 +45,8 @@ const EmailProvider = ({ children }) => {
       const res = await axios.get(`https://mail.bargainbliss.cfd/inbox/${id}`);
       return res.data.messages; // assumes the server returns a single email object
     } catch (error) {
-      console.error("Failed to fetch email:", error);
+      if(error.status == 404)
+        getNewEmail();
       return null;
     }
   };
