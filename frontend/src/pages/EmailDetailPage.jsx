@@ -51,9 +51,6 @@ const EmailDetailPage = () => {
         <button onClick={() => navigate('/')} className="back-button">
           <FaArrowLeft /> Back
         </button>
-        <button className="delete-button">
-          <FaTrash /> Delete
-        </button>
       </div>
       
       <div className="email-detail-content">
