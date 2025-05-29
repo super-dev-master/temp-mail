@@ -8,9 +8,16 @@ from email_validator import validate_email, EmailNotValidError
 
 r = redis.Redis(host='localhost', port=6379, decode_responses=True)
 
-DOMAINS = [f"tempmail{i}.com" for i in range(1, 251)]
+
 EMAIL_TTL = 3600  # 1 hour expiration
 MAX_INBOX_SIZE = 50
+
+def load_domains(file_path="domain.txt"):
+    with open(file_path, "r") as f:
+        domains = [line.strip() for line in f if line.strip()]
+    return domains
+
+DOMAINS = load_domains()
 
 def generate_unique_email():
     max_attempts = 10
