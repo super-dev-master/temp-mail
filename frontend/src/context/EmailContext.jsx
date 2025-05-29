@@ -26,9 +26,12 @@ const EmailProvider = ({ children }) => {
   const refreshInbox = async () => {
     setIsLoading(true)
 
-    const messages = await getEmailById(currentEmail);
-
-    console.log(messages);
+    try{
+      const messages = await getEmailById(currentEmail);
+    }
+    catch(e){
+      console.log(e);
+    }
     setEmails(messages);
 
     setIsLoading(false)
