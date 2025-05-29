@@ -45,9 +45,10 @@ const EmailProvider = ({ children }) => {
       const res = await axios.get(`https://mail.bargainbliss.cfd/inbox/${id}`);
       return res.data.messages; // assumes the server returns a single email object
     } catch (error) {
+      console.log(error);
       if(error.status == 404)
         getNewEmail();
-      return null;
+      return [];
     }
   };
 
