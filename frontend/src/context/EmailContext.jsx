@@ -44,7 +44,7 @@ const EmailProvider = ({ children }) => {
 
   const getEmailById = async (id) => {
     try {
-      const res = await axios.get(`https://localhost:8000/inbox/${id}`);
+      const res = await axios.get(`https://mail.bargainbliss.cfd/inbox/${id}`);
       return res.data.messages; // assumes the server returns a single email object
     } catch (error) {
       console.error("Failed to fetch email:", error);
